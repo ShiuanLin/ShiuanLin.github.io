@@ -53,6 +53,16 @@
       position: relative;
     }
   </style>
+  <script type="text/javascript">
+    $(function(){
+      $("ul>li>a").click(function(event){
+        event.preventDefault();
+        var ref = $(this).attr("href");
+        $("body, html").animate({scrollTop: $(ref).offset().top }, 1000);
+      });
+      $('body').scrollspy({ target: '#navbar-example' })
+    });
+  </script>
 </head>
 <body>
   <div>
